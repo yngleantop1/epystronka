@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>🔥 Online Vape Shop 🔥</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #960FF3;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: grey;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: violet;
+            transform: translateY(-3px);
+        }
+        
+        .hero {
+            background-image: url('https://cdn.discordapp.com/attachments/977861819412647986/1241096349856960603/lean.jpg?ex=6648f48c&is=6647a30c&hm=3003a04f3049620e0b65969b314873c120a3c3908fbdc315167d04730fd301c4&');
+            background-size: 3;
+            background-position: center;
+            height: 300px;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 15px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product:hover {
+            transform: scale(1.05);
+        }
+        
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        
+        .product h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        
+        .product p {
+            color: #777;
+            font-size: 16px;
+        }
+        
+        .product .price {
+            font-size: 22px;
+            color: #e74c3c;
+            margin: 10px 0;
+        }
+        
+        .product button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .product button:hover {
+            background-color: #0056b3;
+        }
+        
+        .contact {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .contact button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .contact button:hover {
+            background-color: #0056b3;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Strona Główna</a></li>
+                <li><a href="#products">Produkty</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="hero" id="home">
+        <h1>🔥 Online Vape Shop 🔥</h1>
+    </div>
+    
+    <section class="products" id="products">
+        <div class="product">
+            <img src="jedno.png" alt="RandM Tornado">
+            <h2>RandM Tornado 🍉</h2>
+            <p>🟩Dostępne smaki są na naszym discord: https://discord.gg/ahdARwrVd2</p>
+            <div class="price">50Zł</div>
+            <button>Dodaj do koszyka</button>
+        </div>
+        <div class="product">
+            <img src="gg.png" alt="Fumoty-Malpki">
+            <h2>Fumoty-Malpki 🐒</h2>
+            <p>🟩Dostępne smaki są na naszym discord: https://discord.gg/ahdARwrVd2</p>
+            <div class="price">40Zł</div>
+            <button>Dodaj do koszyka</button>
+        </div>
+        <!-- Dodaj więcej produktów tutaj -->
+    </section>
+    
+    <section class="contact" id="contact">
+        <h2>Skontaktuj się z nami</h2>
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Twoje imię" required>
+            <input type="email" name="email" placeholder="Twój email" required>
+            <textarea name="message" placeholder="Twoja wiadomość" required></textarea>
+            <button type="submit">Wyślij</button>
+        </form>
+    </section>
+    
+    <footer>
+        &copy; 【 Strona projektowana przez @Ynglean 】
+    </footer>
+</body>
+</html>
