@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>🔥 Online Vape Shop 🔥</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #960FF3;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: grey;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: violet;
+            transform: translateY(-3px);
+        }
+        
+        .hero {
+            background-image: url('https://cdn.discordapp.com/attachments/977861819412647986/1241096349856960603/lean.jpg?ex=6648f48c&is=6647a30c&hm=3003a04f3049620e0b65969b314873c120a3c3908fbdc315167d04730fd301c4&');
+            background-size: 3;
+            background-position: center;
+            height: 300px;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 15px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product:hover {
+            transform: scale(1.05);
+        }
+        
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        
+        .product h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        
+        .product p {
+            color: #777;
+            font-size: 16px;
+        }
+        
+        .product .price {
+            font-size: 22px;
+            color: #e74c3c;
+            margin: 10px 0;
+        }
+        
+        .product button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .product button:hover {
+            background-color: #0056b3;
+        }
+        
+        .contact {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .contact button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .contact button:hover {
+            background-color: #0056b3;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        #notification {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            color: #333;
+            padding: 10px;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Strona Główna</a></li>
+                <li><a href="#products">Produkty</a></li>
+                <li><a href="#home">Więcej</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="hero" id="home">
+        <h1>🔥 Online Vape Shop 🔥</h1>
+    </div>
+
+    <a href="cennik.html" class="animated-button">Więcej Promocje do 1 Lipca❗</a>
+    
+    <section class="products" id="products">
+        <div class="product">
+            <img src="jedno.png" alt="RandM Tornado">
+            <h2>RandM Tornado 🍉</h2>
+            <p>🟩Dostępne smaki są na naszym discord: https://discord.gg/ahdARwrVd2</p>
+            <div class="price">50Zł</div>
+            <button class="payment-button" onclick="redirectToPayPal('50')">Kup za 50 PLN</button>
+        </div>
+        <div class="product">
+            <img src="gg.png" alt="Fumoty-Malpki">
+            <h2>Fumoty-Malpki 🐒</h2>
+            <p>🟩Dostępne smaki są na naszym discord: https://discord.gg/ahdARwrVd2</p>
+            <div class="price">40Zł</div>
+            <button class="payment-button" onclick="redirectToPayPal('40')">Kup za 40 PLN</button>
+        </div>
+        <!-- Dodaj więcej produktów tutaj -->
+    </section>
+
+    <div class="discord">
+        <a href="https://discord.gg/hBEECqUt" class="discord-button">
+            <img src="lean.jpg" alt="Discord Logo" class="discord-icon">
+            Nasz Discord Serwer!
+        </a>
+    </div>
+
+    <div class="logout">
+        <!-- Przycisk "Wyloguj" -->
+        <button class="logout-button" onclick="location.href='index.html'">Wyloguj</button>
+      </div>
+    
+    <div class="contact">
+        <h1>Skontaktuj się z nami</h1>
+        <form id="contact-form">
+            <label for="name">Imię:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Wiadomość:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Wyślij</button>
+        </form>
+        <div id="status"></div>
+    </div>
+    <script src="script.js"></script>
+
+    <div id="notification">Pamiętaj aby wbić do nas na Discord❗</div>
+
+    <script>
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        setInterval(showNotification, 5000);
+    </script>
+    
+    <footer>
+        &copy; 【 Strona projektowana przez @Ynglean 】
+    </footer>
+
+    <script>
+        function redirectToPayPal(price) {
+            const form = document.createElement('form');
+            form.method = 'post';
+            form.action = 'https://www.paypal.com/cgi-bin/webscr';
+
+            const cmd = document.createElement('input');
+            cmd.type = 'hidden';
+            cmd.name = 'cmd';
+            cmd.value = '_xclick';
+            form.appendChild(cmd);
+
+            const business = document.createElement('input');
+            business.type = 'hidden';
+            business.name = 'business';
+            business.value = 'niekox082@gmail.com'; // Zamień na swój adres PayPal
+            form.appendChild(business);
+
+            const itemName = document.createElement('input');
+            itemName.type = 'hidden';
+            itemName.name = 'item_name';
+            itemName.value = 'Epapieros'; // Zamień na nazwę swojego produktu
+            form.appendChild(itemName);
+
+            const amount = document.createElement('input');
+            amount.type = 'hidden';
+            amount.name = 'amount';
+            amount.value = price;
+            form.appendChild(amount);
+
+            const currencyCode = document.createElement('input');
+            currencyCode.type = 'hidden';
+            currencyCode.name = 'currency_code';
+            currencyCode.value = 'PLN'; // Zamień na odpowiedni kod waluty
+            form.appendChild(currencyCode);
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
+
+<script>
+    // title 
+    var titles = ["🔥Online Vape Shop🔥", "Najlepsze Ceny💸", "Wbij Do nas na discord❗"];
+  
+    //  1 sekunda
+    setInterval(changeTitle, 1000);
+  
+    function changeTitle() {
+      var currentIndex = Math.floor(Math.random() * titles.length);
+      document.getElementById("title").innerText = titles[currentIndex];
+    }
+  </script>
+
+</body>
+</html>
